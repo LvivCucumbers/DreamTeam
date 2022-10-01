@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-function App() {
+import { SharedLayout } from './SharedLayout';
+import { useEffect } from 'react';
+const People = lazy(() => import('../pages/People'));
+const Planets = lazy(() => import('../pages/Planets'));
+const Startships = lazy(() => import('../pages/Starships'));
+
+export const App = () => {
+
+
+  useEffect(() => {
+    console.log('wtf')
+}, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     <Routes>
+      <Route path="./" element={ <SharedLayout />} >
+        <Route index element= { <People />} />
+        <Route path="planets" element={<Planets />} />
+        <Route path="startships" element={<Startships />} />
+      </Route>
+    </Routes></>
+   
   );
-}
+};
 
 export default App;
