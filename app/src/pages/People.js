@@ -12,11 +12,3 @@ export default function People() {
         </ul>
     );
 }
-People.propTypes = {
-    trending: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number.isRequired,
-            original_title: PropTypes.string.isRequired,
-        })
-    ),
-};

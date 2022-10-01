@@ -5,24 +5,17 @@ import { SharedLayout } from './SharedLayout';
 import { useEffect } from 'react';
 const People = lazy(() => import('../pages/People'));
 const Planets = lazy(() => import('../pages/Planets'));
-const Startships = lazy(() => import('../pages/Starships'));
+const Starships = lazy(() => import('../pages/Starships'));
 
-export const App = () => {
-
-
-  useEffect(() => {
-    console.log('wtf')
-}, []);
+export function App () {
   return (
-    <>
      <Routes>
-      <Route path="./" element={ <SharedLayout />} >
+      <Route path="/" element={ <SharedLayout />} >
         <Route index element= { <People />} />
-        <Route path="planets" element={<Planets />} />
-        <Route path="startships" element={<Startships />} />
+        <Route path="/planets" element={<Planets />} />
+        <Route path="/starships" element={<Starships />} />
       </Route>
-    </Routes></>
-   
+    </Routes>
   );
 };
 
