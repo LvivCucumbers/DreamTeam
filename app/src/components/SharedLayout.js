@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import styles from './SharedLayout.module.css';
 export function SharedLayout() {
 
-  const StyledLink = styled(NavLink)`
+    const StyledLink = styled(NavLink)`
     color: black;
     &.active {
       color: #3816E7;
